@@ -8,10 +8,13 @@ import {
   StatusBar as MobileStatusBar,
   Platform,
 } from "react-native";
+import WelcomViews from "./src/views/WelcomViews";
+// import WelcomViews from ""
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
+      <WelcomViews />
       <View>
         <Text>dsjdjhsd</Text>
         <Text>Open up App.js to start worki justbhbshdbs on your app! to see dd</Text>

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ReactNativeBase",
-    "slug": "ReactNativeBase",
+    "name": "react-native-boiler",
+    "slug": "react-native-boiler",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./src/assets/icon.png",

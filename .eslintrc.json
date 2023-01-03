@@ -7,6 +7,12 @@
     "window": true,
     "module": true
   },
+  // "import/resolver": {
+  //   "babel-module": {
+  //     "root": ["./src"],
+  //     "extensions": [".js", ".jsx"]
+  //   }
+  // },
   "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
   "overrides": [],
   "parserOptions": {
