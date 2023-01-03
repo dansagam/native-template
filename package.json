@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --dev-client",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "publish": "expo publish --target bare --release-channel dev-4",
     "prepare": "husky install",
     "lint-and-fix": "eslint . --ext .ts .tsx --fix",
     "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\"",
