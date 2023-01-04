@@ -23,6 +23,7 @@ module.exports = function (api) {
             layouts: "./src/layouts",
             utils: "./src/utils",
             navigations: "./src/navigations",
+            themes: "./src/themes",
           },
         },
       ],
