@@ -9,10 +9,16 @@ const AuthNavigation = () => {
     {
       name: "Onboarding",
       screen: Onboarding,
+      navigationOptions: {
+        headerShown: false,
+      },
     },
     {
       name: "SignIn",
       screen: SignIn,
+      navigationOptions: {
+        headerShown: true,
+      },
     },
     {
       name: "SignUp",
@@ -27,9 +33,9 @@ const AuthNavigation = () => {
       screen: CreatePassword,
     },
   ];
-  const navigationOptions = {
-    headerShown: false,
-  };
+  // const navigationOptions = {
+  //   headerShown: true,
+  // };
   return (
     <Stack.Navigator>
       {screen.map((field, i) => (
@@ -37,7 +43,7 @@ const AuthNavigation = () => {
           key={`${field.name}-${i}`}
           name={field.name}
           component={field.screen}
-          options={{ title: "OverView", ...navigationOptions }}
+          options={{ title: "OverView", ...field.navigationOptions }}
         />
       ))}
     </Stack.Navigator>

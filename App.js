@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     // alignItems: "center",
     // justifyContent: "center",
-    color: "#000",
+    // color: "#000",
     paddingTop: Platform.OS === "android" ? MobileStatusBar.currentHeight : 0,
   },
 });
