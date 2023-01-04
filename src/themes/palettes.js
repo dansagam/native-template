@@ -108,6 +108,7 @@ const palette = {
     primary: "#413A3A;",
     secondary: "#605959",
     disabled: "rgba(0, 0, 0, 0.38)",
+    white: "#fff",
   },
   background: {
     paper: "#fcfcfc",

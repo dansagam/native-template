@@ -1,24 +1,32 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
+import { Button, Text } from "shared";
 
+// eslint-disable-next-line no-unused-vars
 const Onboarding = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.viewContainer}>
         <View style={styles.topBar}>
-          <Text style={styles.topBarText}>Business Deal account</Text>
-        </View>
-        <View style={styles.midBar}>
-          <Text style={styles.midText}>
-            your journey to the financial wellness for the year 2023
+          <Text variant="h1" color="white">
+            Business Deal account
           </Text>
         </View>
+        <View style={styles.midBar}>
+          <Text variant="h3">your journey to the financial wellness for the year 2023</Text>
+        </View>
         <View style={styles.lowBar}>
-          <Button
+          {/* <Button
             color="#2196F3"
             title="Onboarding"
             onPress={() => navigation.navigate("SignIn")}
+          /> */}
+          <Button
+            label="Onboarding"
+            onPress={() => navigation.navigate("SignIn")}
+            size="large"
+            variant="outlined"
           />
           <Text style={styles.lowerText}>I already have an account</Text>
         </View>
@@ -44,7 +52,6 @@ const styles = StyleSheet.create({
   topBarText: {
     color: "#fff",
     textAlign: "center",
-    padding: 10,
     fontSize: 20,
     fontWeight: "500",
   },

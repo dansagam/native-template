@@ -1,58 +1,62 @@
 import { StyleSheet } from "react-native";
-import { pxToRem } from "utils/formatFont";
+import { RFValue } from "react-native-responsive-fontsize";
+
+export const normalize = (size) => {
+  return RFValue(size, 844);
+};
 
 // const FONT_PRIMARY = `"Ub","Open Sans", "sans-serif"`;
 
 const typography = StyleSheet.create({
   h1: {
     fontFamily: "Ubuntu-Bold",
-    fontSize: pxToRem(18),
-    lineHeight: 18 / 40,
+    fontSize: 18,
+    lineHeight: normalize(18) * 1.5,
   },
   h2: {
     fontFamily: "Ubuntu-Bold",
-    fontSize: pxToRem(18),
-    lineHeight: 18 / 40,
+    fontSize: 18,
+    lineHeight: normalize(18) * 1.5,
   },
   h3: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: pxToRem(18),
-    lineHeight: 18 / 40,
+    fontSize: 18,
+    lineHeight: normalize(18) * 1.5,
   },
   h4: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: pxToRem(16),
-    lineHeight: 16 / 38,
+    fontSize: 16,
+    lineHeight: normalize(16) * 1.5,
   },
   h5: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: pxToRem(16),
-    lineHeight: 16 / 28,
+    fontSize: 16,
+    lineHeight: normalize(16) * 1.5,
   },
   subtitle1: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: pxToRem(16),
-    lineHeight: 16 / 24,
+    fontSize: 16,
+    lineHeight: normalize(16) * 1.5,
   },
   subtitle2: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: pxToRem(18),
-    lineHeight: 14 / 20,
+    fontSize: 14,
+    lineHeight: normalize(14) * 1.5,
   },
   caption: {
     fontFamily: "Ubuntu-Light",
-    fontSize: pxToRem(14),
-    lineHeight: 14 / 24,
+    fontSize: 14,
+    lineHeight: normalize(14) * 1.5,
   },
   body1: {
     fontFamily: "Ubuntu-Regular",
-    fontSize: pxToRem(14),
-    lineHeight: 14 / 24,
+    fontSize: 14,
+    lineHeight: normalize(14) * 1.5,
   },
   body2: {
     fontFamily: "Ubuntu-Regular",
-    fontSize: pxToRem(12),
-    lineHeight: 12 / 20,
+    fontSize: 12,
+    lineHeight: normalize(12) * 1.5,
   },
 });
 

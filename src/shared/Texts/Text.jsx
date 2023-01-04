@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { TextPropTypes, Text as NativeText } from "react-native";
+import { Text as NativeText } from "react-native";
 import typography from "themes/typography";
-import { RFValue } from "react-native-responsive-fontsize";
+import palette from "themes/palettes";
 
 const variantValue = [
   "h1",
@@ -18,15 +18,14 @@ const variantValue = [
   "subtitle2",
 ];
 
-export const normalize = (size) => {
-  return RFValue(size, 844);
-};
-
-const Text = ({ children, variant, style, ...props }) => {
+const Text = ({ children, variant, style, color, ...props }) => {
+  const textColor = palette.text[color || "primary"];
+  console.log(typography[variant], typography.h1);
   return (
     <NativeText
       style={{
-        ...typography[variant],
+        ...typography[variant || "body1"],
+        color: textColor,
         ...style,
       }}
       allowFontScaling
@@ -38,11 +37,10 @@ const Text = ({ children, variant, style, ...props }) => {
 };
 
 Text.propTypes = {
-  ...TextPropTypes,
   variant: PropTypes.oneOf([...variantValue]).isRequired,
   children: PropTypes.node.isRequired,
   onPress: PropTypes.func,
-  color: PropTypes.oneOf(["primary", "secondary"]),
+  color: PropTypes.oneOf(["primary", "secondary", "disabled", "white"]),
   style: PropTypes.oneOfType([PropTypes.object]),
 };
 
