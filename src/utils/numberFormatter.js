@@ -16,4 +16,18 @@ export const formatInputToThousand = (value) => {
   return !result.includes("NaN") ? result : "";
 };
 
+export const onNumberValidator = (values, onChange, formatted = false, currency = false) => {
+  const re = /^[0-9\b]+$/;
+  if (typeof values === "string") {
+    if (values === "" || re.test(values)) {
+      if (onChange) {
+        if (formatted) {
+          return onChange(formatThousand(values, currency));
+        }
+        return onChange(values);
+      }
+    }
+  }
+};
+
 export const removeThousandDelimiter = (value) => value.replace(/,/g, "");
