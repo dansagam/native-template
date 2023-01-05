@@ -65,7 +65,7 @@ const Button = ({
         <ActivityIndicator size="small" animating color={color} />
       ) : (
         children ?? (
-          <Text variant="h2" style={{ color: backColor.color }}>
+          <Text variant="h4" style={{ color: backColor.color }}>
             {" "}
             {label}{" "}
           </Text>

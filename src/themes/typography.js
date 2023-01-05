@@ -10,23 +10,23 @@ export const normalize = (size) => {
 const typography = StyleSheet.create({
   h1: {
     fontFamily: "Ubuntu-Bold",
-    fontSize: 18,
-    lineHeight: normalize(18) * 1.5,
+    fontSize: 28,
+    lineHeight: normalize(28) * 1.5,
   },
   h2: {
     fontFamily: "Ubuntu-Bold",
-    fontSize: 18,
-    lineHeight: normalize(18) * 1.5,
+    fontSize: 24,
+    lineHeight: normalize(24) * 1.5,
   },
   h3: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: 18,
-    lineHeight: normalize(18) * 1.5,
+    fontSize: 20,
+    lineHeight: normalize(20) * 1.5,
   },
   h4: {
     fontFamily: "Ubuntu-Medium",
-    fontSize: 16,
-    lineHeight: normalize(16) * 1.5,
+    fontSize: 18,
+    lineHeight: normalize(18) * 1.5,
   },
   h5: {
     fontFamily: "Ubuntu-Medium",

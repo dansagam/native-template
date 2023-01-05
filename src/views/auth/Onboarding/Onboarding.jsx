@@ -9,12 +9,14 @@ const Onboarding = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.viewContainer}>
         <View style={styles.topBar}>
-          <Text variant="h1" color="white">
+          <Text variant="h1" color="common.white">
             Business Deal account
           </Text>
         </View>
         <View style={styles.midBar}>
-          <Text variant="h3">your journey to the financial wellness for the year 2023</Text>
+          <Text variant="h3" color="common.white">
+            your journey to the financial wellness for the year 2023
+          </Text>
         </View>
         <View style={styles.lowBar}>
           {/* <Button
@@ -28,7 +30,9 @@ const Onboarding = ({ navigation }) => {
             size="large"
             variant="outlined"
           />
-          <Text style={styles.lowerText}>I already have an account</Text>
+          <Text variant="body2" color="common.white" style={styles.lowerText}>
+            I already have an account
+          </Text>
         </View>
       </View>
     </SafeAreaView>
@@ -82,7 +86,6 @@ const styles = StyleSheet.create({
   },
   lowerText: {
     textAlign: "center",
-    color: "#fff",
   },
 });
 export default Onboarding;

@@ -19,8 +19,8 @@ const variantValue = [
 ];
 
 const Text = ({ children, variant, style, color, ...props }) => {
-  const textColor = palette.text[color || "primary"];
-  console.log(typography[variant], typography.h1);
+  const splitColor = color?.split(".");
+  const textColor = palette[splitColor[0]][splitColor[1]];
   return (
     <NativeText
       style={{
@@ -40,14 +40,14 @@ Text.propTypes = {
   variant: PropTypes.oneOf([...variantValue]).isRequired,
   children: PropTypes.node.isRequired,
   onPress: PropTypes.func,
-  color: PropTypes.oneOf(["primary", "secondary", "disabled", "white"]),
+  color: PropTypes.string,
   style: PropTypes.oneOfType([PropTypes.object]),
 };
 
 Text.defaultProps = {
   onPress: () => null,
   variant: "body1",
-  color: "primary",
+  color: "text.primary",
   style: {},
 };
 
