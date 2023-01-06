@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { StyleSheet, View, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView, TouchableOpacity } from "react-native";
 import { Button, Text } from "shared";
+import palette from "themes/palettes";
 
 // eslint-disable-next-line no-unused-vars
 const Onboarding = ({ navigation }) => {
@@ -9,12 +10,12 @@ const Onboarding = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.viewContainer}>
         <View style={styles.topBar}>
-          <Text variant="h1" color="common.white">
+          <Text variant="h1" color="primary.main">
             Business Deal account
           </Text>
         </View>
         <View style={styles.midBar}>
-          <Text variant="h3" color="common.white">
+          <Text variant="h5" color="primary.main" style={styles.midText}>
             your journey to the financial wellness for the year 2023
           </Text>
         </View>
@@ -28,11 +29,13 @@ const Onboarding = ({ navigation }) => {
             label="Onboarding"
             onPress={() => navigation.navigate("SignIn")}
             size="large"
-            variant="outlined"
+            // variant="outlined"
           />
-          <Text variant="body2" color="common.white" style={styles.lowerText}>
-            I already have an account
-          </Text>
+          <TouchableOpacity>
+            <Text variant="body2" style={styles.lowerText}>
+              I already have an account
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
@@ -42,7 +45,7 @@ const Onboarding = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "dodgerblue",
+    backgroundColor: palette.background.default,
   },
   viewContainer: {
     flex: 1,
@@ -66,10 +69,7 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   midText: {
-    fontSize: 16,
-    color: "#fff",
     textAlign: "center",
-    fontWeight: "500",
   },
   lowBar: {
     flex: 0.5,

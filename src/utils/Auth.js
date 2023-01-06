@@ -1,17 +1,17 @@
 import jwtDecode from "jwt-decode";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const setToken = (token) => {
-  AsyncStorage.setItem("accessToken", token);
+const setToken = async (token) => {
+  await AsyncStorage.setItem("accessToken", token);
 };
 
-const getToken = () => {
-  return AsyncStorage.getItem("accessToken");
+const getToken = async () => {
+  return await AsyncStorage.getItem("accessToken");
 };
 
-const getDecodedJwt = () => {
+const getDecodedJwt = async () => {
   try {
-    const token = getToken();
+    const token = await getToken();
     const decoded = jwtDecode(token);
     return decoded;
   } catch (err) {
@@ -19,17 +19,17 @@ const getDecodedJwt = () => {
   }
 };
 
-const setRefreshToken = (refreshToken) => {
-  AsyncStorage.setItem("refreshToken", refreshToken);
+const setRefreshToken = async (refreshToken) => {
+  await AsyncStorage.setItem("refreshToken", refreshToken);
 };
 
-const getRefreshToken = () => {
-  return AsyncStorage.getItem("refreshToken");
+const getRefreshToken = async () => {
+  return await AsyncStorage.getItem("refreshToken");
 };
 
-const removeToken = () => {
-  AsyncStorage.removeItem("refreshToken");
-  AsyncStorage.removeItem("token");
+const removeToken = async () => {
+  await AsyncStorage.removeItem("refreshToken");
+  await AsyncStorage.removeItem("token");
 };
 
 const logOut = (navigate) => {
