@@ -11,10 +11,12 @@ const ControlledInput = ({
   isNumber,
   isCurrency,
   isFormatted,
+  control,
 }) => {
   return (
     <Controller
       name={name}
+      control={control}
       // eslint-disable-next-line no-unused-vars
       render={({ field: { ref, onChange, onBlur, value }, fieldState: { error } }) => (
         <Input
@@ -43,6 +45,7 @@ ControlledInput.propTypes = {
   isNumber: PropTypes.bool,
   isCurrency: PropTypes.bool,
   isFormatted: PropTypes.bool,
+  control: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.array]),
 };
 
 ControlledInput.defaultProps = {
@@ -52,6 +55,7 @@ ControlledInput.defaultProps = {
   isNumber: false,
   isCurrency: false,
   isFormatted: false,
+  control: () => {},
 };
 
 export default ControlledInput;

@@ -22,6 +22,7 @@ const Button = ({
   disabled,
   onPress,
   fullWidth,
+  inverse,
   size,
 }) => {
   const baseColor = palette[color || "primary"];
@@ -48,6 +49,9 @@ const Button = ({
         ...(disabled && {
           ...disableBgColor,
         }),
+        ...(inverse && {
+          backgroundColor: backColor.color,
+        }),
         height: btnSize[size || "medium"],
         alignItems: "center",
         justifyContent: "center",
@@ -65,7 +69,10 @@ const Button = ({
         <ActivityIndicator size="small" animating color={color} />
       ) : (
         children ?? (
-          <Text variant="h4" style={{ color: backColor.color }}>
+          <Text
+            variant="h4"
+            style={{ color: inverse ? backColor.backgroundColor : backColor.color }}
+          >
             {" "}
             {label}{" "}
           </Text>
@@ -85,6 +92,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   size: PropTypes.oneOf(["large", "medium", "small"]),
   fullWidth: PropTypes.bool,
+  inverse: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -96,6 +104,7 @@ Button.defaultProps = {
   disabled: false,
   size: "medium",
   fullWidth: true,
+  inverse: false,
 };
 
 export default Button;

@@ -1,12 +1,14 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import AuthLayout from "views/auth/shared/AuthLayout";
 
 const CreatePassword = () => {
-  console.log("kjhkhjhjkj");
   return (
-    <View style={styles.container}>
-      <Text>Create Password Screen</Text>
-    </View>
+    <AuthLayout>
+      <View style={styles.container}>
+        <Text>Create Password Screen</Text>
+      </View>
+    </AuthLayout>
   );
 };
 

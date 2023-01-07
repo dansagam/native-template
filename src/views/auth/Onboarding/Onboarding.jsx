@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { StyleSheet, View, SafeAreaView, TouchableOpacity } from "react-native";
+import { StyleSheet, View, SafeAreaView, Pressable } from "react-native";
 import { Button, Text } from "shared";
 import palette from "themes/palettes";
 
@@ -10,12 +10,12 @@ const Onboarding = ({ navigation }) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.viewContainer}>
         <View style={styles.topBar}>
-          <Text variant="h1" color="primary.main">
+          <Text variant="h1" color="common.white">
             Business Deal account
           </Text>
         </View>
         <View style={styles.midBar}>
-          <Text variant="h5" color="primary.main" style={styles.midText}>
+          <Text variant="h5" color="common.white" style={styles.midText}>
             your journey to the financial wellness for the year 2023
           </Text>
         </View>
@@ -27,15 +27,16 @@ const Onboarding = ({ navigation }) => {
           /> */}
           <Button
             label="Onboarding"
-            onPress={() => navigation.navigate("SignIn")}
+            onPress={() => navigation.navigate("SignUp")}
             size="large"
+            inverse
             // variant="outlined"
           />
-          <TouchableOpacity>
-            <Text variant="body2" style={styles.lowerText}>
+          <Pressable onPress={() => navigation.navigate("SignIn")}>
+            <Text variant="h5" color="common.white" style={styles.lowerText}>
               I already have an account
             </Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
     </SafeAreaView>
@@ -45,7 +46,7 @@ const Onboarding = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: palette.background.default,
+    backgroundColor: palette.primary.main,
   },
   viewContainer: {
     flex: 1,
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   },
   lowerText: {
     textAlign: "center",
+    fontSize: 12,
   },
 });
 export default Onboarding;

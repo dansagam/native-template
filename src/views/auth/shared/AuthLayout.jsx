@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
+import palette from "themes/palettes";
 
 const AuthLayout = ({ children, containerStyles }) => {
   return (
@@ -35,10 +36,13 @@ const styles = StyleSheet.create({
   container: {
     height: Dimensions.get("window").height,
     width: Dimensions.get("window").width,
+    backgroundColor: palette.background.default,
+    padding: 8,
   },
 
   content: {
     flex: 1,
+    padding: 8,
   },
 });
 

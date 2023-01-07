@@ -30,7 +30,7 @@ const TextInput = ({
         width: "100%",
         height: multiline ? 100 : 50,
         backgroundColor: "transparent",
-        marginVertical: 10,
+        marginVertical: 18,
         paddingVertical: multiline ? 10 : 5,
         paddingHorizontal: 10,
         position: "relative",
@@ -81,6 +81,7 @@ const TextInput = ({
           zIndex: 3000,
           ...style,
         }}
+        keyboardType={isNumber ? "numeric" : "default"}
         {...props}
       />
       {(helperText || error) && (
