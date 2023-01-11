@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, TextInput as NativeTextInput, StyleSheet } from "react-native";
+import { View, TextInput as NativeTextInput, StyleSheet, TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import { Text } from "shared";
 import palette from "themes/palettes";
 import { onNumberValidator } from "utils/numberFormatter";
@@ -17,10 +18,14 @@ const TextInput = ({
   isCurrency,
   isFormatted,
   labelStyle,
+  secureVisibility,
   style,
+  RightIcon,
+  leftIcon,
   ...props
 }) => {
   const [focused, setFocused] = React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
   return (
     <View
       style={{
@@ -60,6 +65,11 @@ const TextInput = ({
           {label}
         </Text>
       )}
+      {isCurrency ? (
+        <Text style={[styles.leftBtnVisibility, { marginLeft: 10 }]}>₦</Text>
+      ) : (
+        leftIcon && <View style={[styles.leftBtnVisibility, { marginLeft: 10 }]}>{leftIcon}</View>
+      )}
       <NativeTextInput
         onChangeText={(val) => {
           if (onChangeText) {
@@ -74,6 +84,7 @@ const TextInput = ({
         multiline={multiline}
         editable
         placeholder={placeholder}
+        secureTextEntry={secureVisibility && !showPassword}
         placeholderTextColor={palette.secondary.main}
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
@@ -84,6 +95,22 @@ const TextInput = ({
         keyboardType={isNumber ? "numeric" : "default"}
         {...props}
       />
+      {secureVisibility ? (
+        <TouchableOpacity
+          onPress={() => setShowPassword(() => !showPassword)}
+          style={[styles.rightBtnVisibility, { marginLeft: 10 }]}
+        >
+          <Ionicons
+            color={palette.secondary.light}
+            size={22}
+            name={showPassword ? "ios-eye-off" : "ios-eye"}
+          />
+        </TouchableOpacity>
+      ) : (
+        RightIcon && (
+          <View style={[styles.rightBtnVisibility, { marginLeft: 10 }]}>{RightIcon}</View>
+        )
+      )}
       {(helperText || error) && (
         <View>
           <Text variant="body2" style={styles.errorContainer}>
@@ -109,6 +136,8 @@ TextInput.propTypes = {
   isNumber: PropTypes.bool,
   isCurrency: PropTypes.bool,
   isFormatted: PropTypes.bool,
+  RightIcon: PropTypes.node,
+  leftIcon: PropTypes.node,
 };
 
 TextInput.defaultProps = {
@@ -125,6 +154,8 @@ TextInput.defaultProps = {
   isNumber: false,
   isCurrency: false,
   isFormatted: false,
+  RightIcon: <></>,
+  leftIcon: <></>,
 };
 
 const styles = StyleSheet.create({
@@ -135,6 +166,22 @@ const styles = StyleSheet.create({
     fontSize: 9,
     textAlign: "left",
     color: palette.error.light,
+  },
+  rightBtnVisibility: {
+    position: "absolute",
+    right: 9,
+    height: 25,
+    width: 25,
+    padding: 0,
+    marginTop: 21,
+  },
+  leftBtnVisibility: {
+    position: "absolute",
+    left: 9,
+    height: 25,
+    width: 25,
+    padding: 0,
+    marginTop: 21,
   },
 });
 

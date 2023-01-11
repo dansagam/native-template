@@ -4,25 +4,28 @@ import { Pressable, StyleSheet, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { Text } from "shared";
 
-const AuthHeader = ({ onPrevious }) => {
+const AuthHeader = ({ onPrevious, backBtn }) => {
   return (
     <View style={styles.container}>
       <Pressable onPress={onPrevious} style={styles.icon}>
-        <AntDesign name="left" size={20} color="black" />
+        {backBtn && <AntDesign name="left" size={20} color="black" />}
       </Pressable>
       <Text style={styles.main} variant="h5" color="primary.main">
         Home Icon
       </Text>
+      <View style={styles.lastFlex} />
     </View>
   );
 };
 
 AuthHeader.propTypes = {
   onPrevious: PropTypes.func,
+  backBtn: PropTypes.bool,
 };
 
 AuthHeader.defaultProps = {
   onPrevious: () => {},
+  backBtn: true,
 };
 
 const styles = StyleSheet.create({
@@ -35,6 +38,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   icon: {
+    width: 30,
+  },
+  lastFlex: {
     width: 30,
   },
 });

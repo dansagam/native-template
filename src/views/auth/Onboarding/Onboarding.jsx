@@ -32,7 +32,7 @@ const Onboarding = ({ navigation }) => {
             inverse
             // variant="outlined"
           />
-          <Pressable onPress={() => navigation.navigate("SignIn")}>
+          <Pressable onPress={() => navigation.navigate("SignIn")} style={styles.accountBtn}>
             <Text variant="h5" color="common.white" style={styles.lowerText}>
               I already have an account
             </Text>
@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
   lowerText: {
     textAlign: "center",
     fontSize: 12,
+  },
+  accountBtn: {
+    marginTop: 10,
   },
 });
 export default Onboarding;

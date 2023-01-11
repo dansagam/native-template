@@ -8,10 +8,13 @@ import { Button, ControlledInput, Text } from "shared";
 
 const Signup = ({ navigation }) => {
   const { control } = useForm();
+  const handlePreviousPage = () => {
+    navigation.navigate("Onboarding");
+  };
   return (
     <AuthLayout>
       <View>
-        <AuthHeader />
+        <AuthHeader onPrevious={handlePreviousPage} />
         <View style={styles.inputContainer}>
           <ControlledInput
             control={control}
@@ -60,6 +63,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     paddingVertical: 20,
+    paddingHorizontal: 5,
   },
   forgotPassword: {
     marginVertical: 10,

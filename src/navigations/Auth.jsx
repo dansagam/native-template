@@ -17,20 +17,29 @@ const AuthNavigation = () => {
       name: "SignIn",
       screen: SignIn,
       navigationOptions: {
-        headerShown: true,
+        headerShown: false,
       },
     },
     {
       name: "SignUp",
       screen: SignUp,
+      navigationOptions: {
+        headerShown: false,
+      },
     },
     {
       name: "ForgotPassword",
       screen: ForgotPassword,
+      navigationOptions: {
+        headerShown: false,
+      },
     },
     {
       name: "CreatePassword",
       screen: CreatePassword,
+      navigationOptions: {
+        headerShown: false,
+      },
     },
   ];
   // const navigationOptions = {
