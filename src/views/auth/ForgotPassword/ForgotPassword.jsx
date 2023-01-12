@@ -31,7 +31,7 @@ const ForgotPassword = ({ navigation }) => {
             <ControlledInput
               control={control}
               name="email"
-              label="Email Address"
+              label="Email"
               placeholder="Enter email address here"
             />
           </View>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   btn: {
-    flex: "auto",
+    // flex: 80,
   },
 });
 

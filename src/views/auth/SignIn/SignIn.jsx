@@ -1,29 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import AuthLayout from "views/auth/shared/AuthLayout";
 import AuthHeader from "views/auth/shared/AuthHeader";
-import { Button, ControlledInput } from "shared";
+import { Button, ControlledInput, Text } from "shared";
 import { useForm } from "react-hook-form";
 
 const SignIn = ({ navigation }) => {
   const handlePrevPage = () => {
     navigation.navigate("SignUp");
   };
-  const { control } = useForm();
+  const { control, handleSubmit } = useForm();
+
+  const onSubmit = (values) => {
+    console.log({ values });
+  };
   return (
     <AuthLayout>
       <AuthHeader onPrevious={handlePrevPage} />
       <View style={styles.container}>
         <View style={styles.topContainer}>
-          <Text>Sign in Screen</Text>
+          <Text variant="h4" color="primary.main">
+            Sign In
+          </Text>
           <View>
-            <ControlledInput control={control} name="email" label="Email" />
-            <ControlledInput control={control} name="password" label="Password" />
+            <ControlledInput
+              control={control}
+              name="email"
+              label="Email"
+              placeholder="Enter Email address"
+            />
+            <ControlledInput
+              control={control}
+              name="password"
+              label="Password"
+              placeholder="Password"
+            />
           </View>
         </View>
         <View style={styles.btn}>
-          <Button label="Sign In" />
+          <Button label="Sign In" size="large" onPress={handleSubmit(onSubmit)} />
         </View>
       </View>
     </AuthLayout>
@@ -33,11 +49,12 @@ const SignIn = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // alignItems: "center",
-    // justifyContent: "center",
+    paddingVertical: 20,
+    paddingHorizontal: 5,
   },
   topContainer: {
     flex: 1,
+    marginTop: 20,
   },
   btn: {
     flex: "auto",
