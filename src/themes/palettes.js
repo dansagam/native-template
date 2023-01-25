@@ -21,15 +21,28 @@ const GREY = {
 };
 
 const PRIMARY = {
-  lighter: "#fcaf98",
-  light: "#fc7850",
-  main: "#f15c2f",
-  dark: "#ba4320",
-  darker: "#E42D1B",
+  lighter: "#3f87f2",
+  // lighter: lighten("#3f87f2", 0.9),
+  light: "#3f87f2",
+  // light: lighten("#3f87f2", 0.5),
+  main: "#0A1045",
+  // dark: darken("#272833", 0.5),
+  dark: "#0A1045",
+  // dark: darken("#0A1045", 0.5),
+  darker: "#272833",
   input: "#fff",
   lighterAlt: "#fff",
   tertiary: "#fff",
-  contrastText: "#fff",
+  contrastText: "#FFFFFF",
+  // lighter: "#fcaf98",
+  // light: "#fc7850",
+  // main: "#f15c2f",
+  // dark: "#ba4320",
+  // darker: "#E42D1B",
+  // input: "#fff",
+  // lighterAlt: "#fff",
+  // tertiary: "#fff",
+  // contrastText: "#fff",
 };
 
 const SECONDARY = {

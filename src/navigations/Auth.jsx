@@ -1,6 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { CreatePassword, ForgotPassword, Onboarding, SignIn, SignUp } from "views";
+import { AuthLogo } from "shared";
+// import palette from "themes/palettes";
 
 const AuthNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -16,30 +18,18 @@ const AuthNavigation = () => {
     {
       name: "SignIn",
       screen: SignIn,
-      navigationOptions: {
-        headerShown: false,
-      },
     },
     {
       name: "SignUp",
       screen: SignUp,
-      navigationOptions: {
-        headerShown: false,
-      },
     },
     {
       name: "ForgotPassword",
       screen: ForgotPassword,
-      navigationOptions: {
-        headerShown: false,
-      },
     },
     {
       name: "CreatePassword",
       screen: CreatePassword,
-      navigationOptions: {
-        headerShown: false,
-      },
     },
   ];
   // const navigationOptions = {
@@ -52,7 +42,13 @@ const AuthNavigation = () => {
           key={`${field.name}-${i}`}
           name={field.name}
           component={field.screen}
-          options={{ title: "OverView", ...field.navigationOptions }}
+          options={{
+            title: "OverView",
+            headerTitle: (props) => <AuthLogo {...props} />,
+            headerShown: true,
+            headerTitleAlign: "center",
+            ...field.navigationOptions,
+          }}
         />
       ))}
     </Stack.Navigator>

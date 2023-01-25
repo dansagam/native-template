@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   btn: {
-    flex: "auto",
+    flex: 1,
   },
 });
 

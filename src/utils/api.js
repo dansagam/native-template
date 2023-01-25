@@ -2,7 +2,7 @@ import axios from "axios";
 import { REACT_APP_BASE_URL } from "@env";
 import Auth from "./Auth";
 
-console.log({ REACT_APP_BASE_URL });
+// console.log({ REACT_APP_BASE_URL });
 const Api = axios.create({
   baseURL: REACT_APP_BASE_URL,
 });
